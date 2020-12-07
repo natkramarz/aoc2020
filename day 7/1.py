@@ -5,6 +5,7 @@ def find_bags(curr_bag):
             options.add(item)
             find_bags(item)
 
+
 with open('input.txt', 'r') as file:
     lines = file.read().split('\n')
     in_which_bags = dict()
