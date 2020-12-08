@@ -11,10 +11,9 @@ with open('input.txt', 'r') as file:
             print(accumulator)
             break
         was_executed.add(cnt)
-        if op == "nop":
-            cnt += 1
-        elif op == "acc":
-            cnt += 1
-            accumulator += value
-        elif op == 'jmp':
+        if op == 'jmp':
             cnt += value
+        else:
+            cnt += 1
+            if op == "acc":
+                accumulator += value

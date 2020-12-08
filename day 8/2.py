@@ -11,13 +11,12 @@ def check_if_stops():
         if cnt in was_executed:
             return None
         was_executed.add(cnt)
-        if op == "nop":
+        if op == 'jmp':
+            cnt += value
+        else:
             cnt += 1
-        elif op == "acc":
-            cnt += 1
-            accumulator += value
-        elif op == 'jmp':
-           cnt += value
+            if op == "acc":
+                accumulator += value
 
 
 with open('input.txt', 'r') as file:
@@ -38,7 +37,7 @@ with open('input.txt', 'r') as file:
                     print(acc)
                     break
                 instructions[i] = instructions[i].replace('jmp', 'nop')
-            elif op == 'jmp':
+            else:
                 instructions[i] = instructions[i].replace('jmp', 'nop')
                 acc = check_if_stops()
                 if acc is not None:
