@@ -22,7 +22,6 @@ def check_sum_of_many(num, length):
                 array.append(int(lines[k]))
 
 
-
 with open('input.txt', 'r') as file:
     lines = file.read().split()
     pre_length = 25
